@@ -71,7 +71,7 @@
         <div class="login_form">
             <div class="login_box">
                 <div class="tit">
-                    <h1>注册尚硅谷会员</h1>
+                    <h1>注册书城会员</h1>
                     <%--<span class="errorMsg"><%=request.getAttribute("msg")==null?"":request.getAttribute("msg")%></span>--%>
                     <span class="errorMsg">${requestScope.msg}</span>
                 </div>
@@ -117,7 +117,6 @@
 </div>
 <footer id="bottom">
 			<span>
-				尚硅谷书城.Copyright &copy;2015
 			</span>
 </footer>
 </body>

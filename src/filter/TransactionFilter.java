@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * Created by qiaoz on 2017/7/10.
  */
 @WebFilter(filterName = "TransactionFilter",urlPatterns = "*")
-public class TransactionFilter implements Filter {
+public class TransactionFilter implements Filter { //设置事务过滤器，如果程序出错，则重定向到错误页面error.jsp
     public void destroy() {
     }
 
@@ -32,6 +32,7 @@ public class TransactionFilter implements Filter {
                 HttpServletResponse response=(HttpServletResponse)resp;
                 HttpServletRequest request=(HttpServletRequest)req;
                 response.sendRedirect(request.getContextPath()+"/pages/error/error.jsp");
+                e.printStackTrace();
             } catch (SQLException e1) {
                 e1.printStackTrace();
             }

@@ -54,9 +54,9 @@ public class UserServlet extends BaseServlet {
             UserDAOImpl userDAO = new UserDAOImpl();
             User selectedUser = userDAO.getUser(username);
             if (selectedUser == null) {
-                User user=new User(username, password, email);
-                session.setAttribute("user",user);
-                userDAO.register(user);
+                userDAO.register(new User(username, password, email));
+                User loginUser=userDAO.login(username, password);
+                session.setAttribute("user",loginUser);
                 response.sendRedirect(request.getContextPath() + "/pages/user/regist_success.jsp");
             } else {
                 String msg = "Username already exists";
